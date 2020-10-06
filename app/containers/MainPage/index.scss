@@ -1,0 +1,260 @@
+.container{
+    background-color: rgb(208, 241, 243);
+    padding-top: 15px;
+}
+.category{
+    background-color: var(--white-color);
+    border-radius: 5px;
+}
+.category__heading{
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 0;                      /* nằm trong thẻ h3, tự dưng có margin top 11.7px */
+    margin-bottom: 0; 
+    padding: 12px 14px;
+    user-select: none;   
+}
+.category-list{
+    padding-left: 0;
+    margin-top: 0;
+    list-style: none;
+}
+.category-item{}
+.category-item-link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 12px 14px;
+    display: block;
+    position: relative;
+    transition: right linear 0.2s;
+    right: 0;
+}
+.category-item-link:hover{
+    color: var(--primary-color);
+    right: -15px;
+}
+.category__heading:hover{          /* chưa làm xong cái này */
+
+}
+
+
+
+
+
+.home-filter{
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+.home-filter__label{
+    font-size: 1.4rem;
+    margin: auto 8px;
+    color: #555;
+    margin-right: 10px;
+    user-select: none;  
+}
+.home-filter__btn{
+    margin: auto 5px;
+}
+.home-filter__page{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+.home-filter__page-number{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-right: 25px;
+}
+.home-filter__page-current{
+    color: var(--text-color);
+
+}
+
+.home-filter__page-control{
+    overflow: hidden;
+    border-radius: 3px;
+    display: flex;
+    width: 65px;
+    height: 32px;
+    
+}
+.home-filter__page-btn{
+    flex: 1;                         /* 2 div con chia đôi, do div lớn có display flex */
+    display: flex;
+    background-color: var(--white-color);
+    text-decoration: none;
+    color: #666;
+    align-items: center;
+    justify-content: center;
+}
+.home-filter__page-btn:first-child{
+    margin-right: 2px;
+}
+.home-filter__page-icon{       
+    font-size: 1.8rem;
+    color: #555;
+}
+
+
+/* --------------------------------------List các sản phẩm -----------------------------------------------*/
+.home-products{}
+.home-product-item{
+    border: 1px solid var(--black-color);
+    background-color: var(--white-color);
+    margin-top: 20px;
+}
+.home-product-item__img{
+    /* chiều ngang thẻ chứa nó (home-product-item) */
+    /* padding-top: 100%;                   
+    background-repeat: none;
+    background-size: contain; */
+    border: 1px solid red;
+}
+.home-product-item__name{
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.7rem;                          /* chiều cao của 1 dòng chữ */
+    color: var(--text-color);
+    margin: 10px;
+    /* Xử lí: chỉ 2 dòng, chữ thừa ra thay bằng dấu 3 chấm */
+    height: 3.4rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+/*     text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+.home-product-item__price{
+    display: flex;
+    flex-wrap: wrap;                            /* đã fix bug giá nhảy xuống dòng */
+    align-items: baseline;
+}
+.home-product-item__price--old{
+    font-size: 1.3rem;
+    text-decoration: line-through;
+    margin-left: 8px;
+}
+.home-product-item__price--new{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-left: 8px;
+ }
+.home-product-item__action{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+    font-size: 1.1rem;
+}
+.home-product-item__like{}
+.home-product-item__rating{
+    font-size: 1.1rem;
+}
+.home-product-item__buying{
+    margin-left: 35px;
+    margin-bottom: 10px;
+}
+
+
+
+/*------------------------------------------------Box Layout ---------------------------------------------*/
+a.header__navbar-item-link-register:hover .box{    
+    display: flex;                                /* bug */
+} 
+.box{
+    position: fixed;                                   /* fail layout rồi*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* display flex và margin auto để căn giữa*/
+    display: flex;                      
+    animation: fadeIn linear 0.3s;
+    display: none;                          /* ------------> bug nè */
+}
+.box__around{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.box__body{
+    position: relative;
+    background-color: var(--white-color);
+    margin: auto;                        /* display flex và margin auto để căn giữa*/
+    z-index: 1;                         /* đưa box này lên trên */
+    border-radius: 8px;
+    animation: growth linear 0.2s;
+    --growth-from: 0.7;
+    --growth-to: 1;
+}
+.auth-form{
+    width: 450px;
+    background-color: var(--white-color);
+    overflow: hidden;
+    border-radius: 5px;
+}
+.auth-form__container{
+    margin: 10px 30px;
+}
+.auth-form__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+.auth-form__switch-btn{
+    color: var(--primary-color);
+}
+.auth-form__aside{
+    margin-bottom: 8px;
+}
+.auth-form__help{
+    display: flex;
+    justify-content: flex-end;  
+    font-size: 1.4rem;
+}
+.auth-form__help-link{
+    text-decoration: none;
+    padding-left: 10px;
+}
+.auth-form__input{
+    width: 100%;
+    height: 25px;
+    margin-top: 8px;
+    padding: 0 10px;                            /* Cho chữ Nhập email cách vô 10px */
+    font-size: 1.4rem;
+    border: 1px solid var(--black-color);
+    border-radius: 2px;
+    outline: none;
+}
+.auth-form__input:focus{
+    border-color: rgb(19, 19, 248);                    /*Nhấp vô từng ô input đổi màu*/
+}
+.auth-form__aside{
+    margin-top: 14px;
+}
+.auth-form__policy-text{
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    text-align: center;                                  /* căn giữa chữ Bằng việc ...... */
+}
+.auth-form__text-link{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.auth-form__controls{
+    display: flex;
+    justify-content: flex-end;                      /*cho button đăng nhập + đăng kí dời sang phải*/
+}
+.auth-form__socials{
+    padding: 12px 20px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
